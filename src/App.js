@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import AboutView from "./components/AboutView";
 import SearchView from "./components/SearchView";
 import { Route, Switch } from "react-router-dom";
+import "./styles/main.scss";
+import Footer from "./components/Footer";
 // import { useState } from "react";
 
 function App() {
@@ -28,12 +30,13 @@ function App() {
     <div>
       <NavBar searchText={searchText} setSearchText={setSearchText} />
       <Switch>
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={AboutView} />
         <Route path="/search">
           <SearchView keyword={searchText} searchResults={searchResults} />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }
