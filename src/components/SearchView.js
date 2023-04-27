@@ -1,16 +1,16 @@
-import Hero from "./Hero";
+import React from "react";
 
-// API KEY= PgrKgO3nsvrugD8Zx4eCceZNB_PQdK9K
-// Ex. link = https://api.tvmaze.com/v1/user/episodes?show_id=PgrKgO3nsvrugD8Zx4eCceZNB_PQdK9K
-
-const SearchView = ({ keyword, searchResults }) => {
-  const title = `You are searching for ${keyword}`;
-  console.log(searchResults, "are the search results");
+function SearchView({ keyword, searchResults }) {
   return (
     <div>
-      <Hero text={title} />
+      <h2>Search Results for "{keyword}"</h2>
+      <ul>
+        {searchResults.map((result) => (
+          <li key={result.show.id}>{result.show.name}</li>
+        ))}
+      </ul>
     </div>
   );
-};
+}
 
 export default SearchView;

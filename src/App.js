@@ -12,23 +12,23 @@ function App() {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetch(`https://api.tvmaze.com/shows`)
+    // console.log(searchText, "is the search text");
+    fetch(`https://api.tvmaze.com/search/shows?q=:${searchText}`)
       .then((response) => {
+        // console.log("blH", response.json());
         return response.json();
       })
       .then((data) => {
         console.log(data);
         setSearchResults(data);
       });
-  }, []);
+  }, [searchText]);
 
   return (
     <div>
       <NavBar searchText={searchText} setSearchText={setSearchText} />
       <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
+        <Route path="/" component={Home} />
         <Route path="/about" component={AboutView} />
         <Route path="/search">
           <SearchView keyword={searchText} searchResults={searchResults} />
