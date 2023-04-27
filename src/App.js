@@ -12,13 +12,15 @@ function App() {
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    console.log(searchText, "is the search text");
-    fetch(`https://api.tvmaze.com/show/${searchText}`)
-      .then((Response) => Response.json)
+    fetch(`https://api.tvmaze.com/shows`)
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
+        setSearchResults(data);
       });
-  }, [searchText]);
+  }, []);
 
   return (
     <div>
