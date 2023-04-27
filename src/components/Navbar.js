@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavBar({ searchText, setSearchText }) {
   const updateSearchText = (e) => {
@@ -9,6 +10,7 @@ function NavBar({ searchText, setSearchText }) {
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
+          <FontAwesomeIcon icon="fa-solid fa-lemon" />
           Notflix
         </Link>
         <button

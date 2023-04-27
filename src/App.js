@@ -7,6 +7,8 @@ import SearchView from "./components/SearchView";
 import { Route, Switch } from "react-router-dom";
 import "./styles/main.scss";
 import Footer from "./components/Footer";
+import solidIcons from "./components/Icons";
+solidIcons();
 // import { useState } from "react";
 
 function App() {
