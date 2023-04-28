@@ -1,16 +1,20 @@
 import React from "react";
-import Hero from "./Hero";
-import SearchResults from "./SearchResults";
 
-function SearchView({ keyword, searchResults }) {
-  const title = `You are searching for ${keyword}`;
-  console.log(searchResults, "are the search results");
+const SearchView = ({ keyword, searchResults }) => {
   return (
     <div>
-      <Hero text={title} />
-      <SearchResults results={searchResults} />
+      <h2>Search results for "{keyword}"</h2>
+      <ul>
+        {searchResults.map((result) => (
+          <li key={result.show.id}>
+            <img src={result.show.image?.medium} alt={result.show.name} />
+            <h3>{result.show.name}</h3>
+            <p>{result.show.summary}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default SearchView;

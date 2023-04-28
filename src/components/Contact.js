@@ -1,28 +1,30 @@
-import Hero from "./Hero";
+import React from "react";
 
-const ContactView = () => {
+const Contact = () => {
   return (
     <div>
-      <Hero text="Contact" />
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8 offset-lg-2 my-5">
-            <p className="lead">
-              <ul>
-                <li>
-                  Mailing address: 308 Negra Arroyo Lane, Albuquerque, New
-                  Mexico. 87104
-                </li>
-                <li>PO Box 8452</li>
-                <li>Phone #:(505) 117-8987 </li>
-                <li>Name:Walter Hartwell White</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
+      <h1>Contact Us</h1>
+      <p>Please fill out the form below to contact us:</p>
+      <form>
+        <label>
+          Name:
+          <input type="text" name="name" />
+        </label>
+        <br />
+        <label>
+          Email:
+          <input type="email" name="email" />
+        </label>
+        <br />
+        <label>
+          Message:
+          <textarea name="message" rows="5" />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
 
-export default ContactView;
+export default Contact;
