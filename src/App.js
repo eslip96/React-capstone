@@ -8,8 +8,9 @@ import { Route, Switch } from "react-router-dom";
 import "./styles/main.scss";
 import Footer from "./components/Footer";
 import solidIcons from "./components/Icons";
+import ContactView from "./components/Contact";
+
 solidIcons();
-// import { useState } from "react";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
