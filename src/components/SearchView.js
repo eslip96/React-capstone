@@ -4,15 +4,19 @@ const SearchView = ({ keyword, searchResults }) => {
   return (
     <div>
       <h2>Search results for "{keyword}"</h2>
-      <ul>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {searchResults.map((result) => (
-          <li key={result.show.id}>
-            <img src={result.show.image?.medium} alt={result.show.name} />
+          <div key={result.show.id} style={{ width: "300px", margin: "10px" }}>
+            <img
+              src={result.show.image?.medium}
+              alt={result.show.name}
+              style={{ maxWidth: "100%", height: "auto" }}
+            />
             <h3>{result.show.name}</h3>
             <p>{result.show.summary}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
