@@ -1,17 +1,30 @@
-import React from "react";
+function SearchResults({ results }) {
+  if (!results) {
+    return null;
+  }
 
-function SearchResults(results) {
-  return results.map((result) => {
-    return (
-      <div key={result.show.id}>
-        <h3>{result.show.name}</h3>
-        <p dangerouslySetInnerHTML={{ __html: result.show.summary }}></p>
-        {result.show.image && (
-          <img src={result.show.image.medium} alt={result.show.name} />
-        )}
-      </div>
-    );
-  });
+  return (
+    <div className="search-results">
+      {results.map((result) => {
+        return (
+          <div className="search-result" key={result.show.id}>
+            {result.show?.image && (
+              <img
+                className="search-result__image"
+                src={result.show.image.medium}
+                alt={result.show.name}
+              />
+            )}
+            <div className="search-result__content">
+              <h3 className="search-result__title">{result.show?.name}</h3>
+              <p
+                className="search-result__summary"
+                dangerouslySetInnerHTML={{ __html: result.show?.summary }}
+              ></p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
-
-export default SearchResults;

@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavBar({ searchText, setSearchText }) {
+  const history = useHistory();
+
   const updateSearchText = (e) => {
+    history.push("/search");
     setSearchText(e.target.value);
   };
 
