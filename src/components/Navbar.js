@@ -39,6 +39,11 @@ function NavBar({ searchText, setSearchText }) {
                 About
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/review">
+                Reviews
+              </Link>
+            </li>
           </ul>
           <form className="d-flex">
             <input

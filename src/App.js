@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import NavBar from "./components/Navbar";
 import Home from "./components/Home";
 import AboutView from "./components/AboutView";
+import ReviewsPage from "./components/ReviewsPage";
 import SearchView from "./components/SearchView";
 import { Route, Switch } from "react-router-dom";
 import "./styles/main.scss";
@@ -35,6 +36,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={AboutView} />
+        <Route path="/reviews" component={ReviewsPage} />
         <Route path="/search">
           <SearchView keyword={searchText} searchResults={searchResults} />
         </Route>
