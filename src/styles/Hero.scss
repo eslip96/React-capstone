@@ -1,0 +1,22 @@
+$bg-color: #343a40;
+$text-color: #fff;
+
+header {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 5rem;
+
+  h1 {
+    font-family: "Quicksand";
+    animation: fadeIn 1s ease-in-out;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

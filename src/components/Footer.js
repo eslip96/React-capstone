@@ -9,7 +9,7 @@ const Footer = () => {
       <footer>
         <ul>
           <li>
-            <Link to="/Contact">Contact Us</Link>
+            <Link to="/contact">Contact Us</Link>
           </li>
         </ul>
         <p>&copy; Notflix {year}</p>
