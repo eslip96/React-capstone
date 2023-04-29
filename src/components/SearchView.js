@@ -2,9 +2,12 @@ import React from "react";
 
 const SearchView = ({ keyword, searchResults }) => {
   return (
-    <div>
+    <div className="card">
       <h2>Search results for "{keyword}"</h2>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div
+        className="card-content"
+        style={{ display: "flex", flexWrap: "wrap" }}
+      >
         {searchResults.map((result) => (
           <div key={result.show.id} style={{ width: "300px", margin: "10px" }}>
             <img
