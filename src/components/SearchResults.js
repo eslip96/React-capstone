@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const SearchView = ({ keyword, searchResults }) => {
+  const [expandedShowId, setExpandedShowId] = useState(null);
+
+  const toggleExpanded = (showId) => {
+    setExpandedShowId(showId === expandedShowId ? null : showId);
+  };
+
   return (
     <div>
       <h2>Search results for "{keyword}"</h2>
@@ -15,7 +21,18 @@ const SearchView = ({ keyword, searchResults }) => {
               />
               <div className="card-content">
                 <h3>{result.show.name}</h3>
-                <p>{result.show.summary}</p>
+                {expandedShowId === result.show.id ? (
+                  <div>
+                    <p>{result.show.summary}</p>
+                    <button onClick={() => toggleExpanded(result.show.id)}>
+                      Hide
+                    </button>
+                  </div>
+                ) : (
+                  <button onClick={() => toggleExpanded(result.show.id)}>
+                    Show More
+                  </button>
+                )}
               </div>
             </div>
           </div>
